@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+ PT
 import fs = require('fs')
 import { Request, Response, NextFunction } from 'express'
 
@@ -61,7 +62,7 @@ module.exports = function getUserProfile () {
             'Content-Security-Policy': CSP
           })
 
-          res.send(fn(user))
+          res.contentType('text/plain').send(fn(user))
         }).catch((error: Error) => {
           next(error)
         })
